@@ -1,0 +1,17 @@
+<!--pages/recommendlist/recommendlist.wxml-->
+<!-- 推荐列表 -->
+<view class='shop' wx:for='{{list}}' wx:key='index'>
+  <image src='{{item.img_url}}' bindtap='handleJump' class='shop-img'></image>
+  <view class='shop-info' bindtap='handleJump'>
+    <text class='shop-title ell'>{{item.yname}} {{item.name}}</text>
+    <text class='shop-add1'>店铺名称：好利来({{item.addr1}}店)</text>
+    <text class='shop-tel'>电话：010-{{item.tel}}</text>
+    <text class='shop-price'>价格：￥{{item.price}}</text>
+    <text class='shop-add2 ell'>详细地址：{{item.addr2}}</text>
+    <text class='shop-time'>营业时间：{{item.mtime}}</text>
+  </view>
+  <view class='shop-star'> 
+    <view class='star-after'>★★★★★</view>
+    <view class='star-before' style='width:{{item.star}}%'>★★★★★</view>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/discount/discount.wxml-->
+<view class='discount' wx:for='{{list}}' wx:key='index'>
+  <image src='{{item.img_url}}' class='discount-img' bindtap='handleJump'></image>
+  <view class='discount-info' bindtap='handleJump'>
+    <text class='discount-name ell'>{{item.name}}</text>
+    <text class='discount-old'>原售价：{{item.old}}元</text>
+    <text class='discount-new'>现售价：{{item.new}}元</text>
+    <text class='discount-surplus'>剩 {{item.surplus}} 个</text>
+  </view>
+  <view class='discount-star'> 
+    <view class='star-after'>★★★★★</view>
+    <view class='star-before' style='width:{{item.star}}%'>★★★★★</view>
+  </view>
+</view>

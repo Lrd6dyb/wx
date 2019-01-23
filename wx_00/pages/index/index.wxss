@@ -1,0 +1,80 @@
+/**index.wxss**/
+/*********** 轮播 ***********/
+.slider,.slider swiper,.slider image{
+  height: 365rpx;
+  width: 100%;
+}
+.container{
+  margin: 0;
+  padding: 0;
+}
+/*********** 九宫格 ***********/
+/*1:父元素弹性布局*/
+.index-nav{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f1f1f1;
+  margin-top: 20rpx;
+}
+/*2:子元素弹性布局 image/text*/
+.index-nav .nav-item{
+  height:240rpx;
+  width:33.33333%;
+  box-sizing: border-box;
+  /*border:1rpx solid #ddd;*/
+  /*item子元素弹性布局*/
+  display: flex;
+  flex-direction: column;   /*子元素按列布局*/
+  justify-content: center;  /*水平居中 垂直居中*/
+  align-items: center;
+  /*小程序:推荐使用字体大小使用 px*/
+  font-size:14px;
+  /*右侧添加边框 底部添加边框*/
+  border-right:1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+}
+/*将 3 6 9元素右侧框去掉*/
+.index-nav .nav-item:nth-child(3){
+  border-right:0 none;
+}
+.index-nav .nav-item:nth-child(6){
+  border-right:0 none;
+}
+.index-nav .nav-item:nth-child(9){
+  border-right:0 none;
+}
+
+/*3:修改图片宽度高度*/
+.index-nav image{
+  width:140rpx;
+  height:140rpx;
+  margin-bottom:10rpx;
+  border-radius: 10%;
+}
+
+/*********** 分隔块 ***********/
+.divider{
+    height: 30rpx;
+    background-color: #f1f1f1;
+}
+
+/*********** 按钮 ***********/
+.index-btn{
+  display: flex;
+  flex-wrap: wrap;
+}
+.index-btn>.btn-item{
+  height:200rpx;
+  width:49.5%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;   /*子元素按列布局*/
+  justify-content: center;  /*水平居中 垂直居中*/
+  align-items: center;
+}
+.index-btn>.btn-item>image{
+  width:300rpx;
+  height:150rpx;
+  margin-bottom:10rpx;
+  border-radius: 5%;
+}
