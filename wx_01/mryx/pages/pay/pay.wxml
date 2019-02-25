@@ -1,0 +1,23 @@
+<!--pages/pay/pay.wxml-->
+<wxs module="numberUtil" src="../../utils/tofixed.wxs"></wxs>
+<view class='app-container'>
+  <view class='non'></view>
+  <view class='pay'>
+    <view class='pay_t'>
+      <text>x</text>
+      <text>确认付款</text>
+      <text>？</text>
+    </view>
+    <view class='price'>￥{{numberUtil.numberFormat(sum)}}</view>
+    <view class='pay_t1'>
+      <text>订单信息</text>
+      <text>转账</text>
+    </view>
+    <view class='pay_t2'>
+      <text>付款方式</text>
+      <text>余额宝</text>
+    </view>
+    <view class='btn'><button catchtap='payTap'>立即付款</button></view>
+    
+  </view>
+</view>

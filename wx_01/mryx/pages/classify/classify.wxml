@@ -1,0 +1,49 @@
+<!--pages/classify/classify.wxml-->
+<wxs module="numberUtil" src="../../utils/tofixed.wxs"></wxs>
+<view class='location-search'>
+	<view class='location'>
+		<image wx:if='{{server}}' src='{{server}}/img/icon.png'></image>
+		<view class='city'>{{city}}</view>
+		<!-- <view class='icon' bindtap=''></view> -->
+	</view>
+	<view class='search'>
+		<image wx:if='{{server}}' src='{{server}}/img/search.png' bindtap='searchProduct'></image>
+		<input type="text" placeholder='点击搜索' bindinput='searchVal'></input>
+	</view>
+</view>
+  <scroll-view class='slider-y' scroll-y  style="width:90px;height:526px" scroll-top="{{scrollTop}}" >
+    <view  class='slider-y-item' wx:for="{{list}}" wx:key="index">
+      <view class='{{ (num==item.pro_type)?"handle":"" }}' bindtap='handle' data-pro_type='{{item.pro_type}}'> 
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+  </scroll-view>
+<view class='content-right'>
+	<view class='slider-x-father'>
+		<scroll-view class="slider-x" scroll-x style="width: 100% " >
+			<view class='slider-x-item' wx:for="{{list_son}}" wx:key="index" data-p_type='{{item.p_type}}' data-pro_type='{{item.pro_type}}' catchtap='sel_classify'>{{item.title}}</view>
+		</scroll-view>
+		<view class='drop-list' bindtap='showclassify'></view>
+		<view class='drop-list-item' style='{{show? "z-index:10;opacity:1":""}}'>
+			<view wx:for="{{list_son}}" wx:key="index" data-p_type='{{item.p_type}}' data-pro_type='{{item.pro_type}}' catchtap='sel_classify'>{{item.title}}</view>
+		</view>
+	</view>
+	<scroll-view class='content-bottom' scroll-y>
+		<block  wx:if="{{searchData==true}}">	
+			<view class='product' wx:for="{{products}}" wx:key="index" data-id='{{item.id}}' bindtap='jump'>
+				<image wx:if='{{server}}' src='{{server}}{{item.img_url}}'></image>
+				<view class='product-info'>	
+					<text class='title ell'>{{item.title}}</text>
+					<view class='price-cart'>
+            <text class='price'>¥{{numberUtil.numberFormat(item.price*1.1)}}</text>
+						<text class='vprice'>¥{{item.price}}</text>
+						<image  wx:if='{{server}}' src="{{server}}/img/cart2.png" catchtap='addCart' data-id='{{item.id}}'></image>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block wx:else>
+			<view class='search-no'>查不到哦，换个关键字试试</view>
+		</block>
+	</scroll-view>
+</view>

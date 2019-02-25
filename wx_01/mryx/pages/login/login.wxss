@@ -1,0 +1,24 @@
+/* pages/register/register.wxss */
+page{
+  background: #ECECEC;
+}
+.login{
+  padding-top: 20rpx;
+}
+.phone,.upwd{
+  padding: 20rpx;
+  border-bottom: 2rpx solid #ddd;
+  background-color: #fff;
+}
+button{
+  margin: 30rpx;
+  background-color: #23A3E7;
+  color:#fff;
+}
+.login-item{
+  margin:0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color:#23A3E7;
+}

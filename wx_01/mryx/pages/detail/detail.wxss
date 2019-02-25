@@ -1,0 +1,152 @@
+
+.slider{
+  width:100%;
+  height:450rpx;
+}
+.slider swiper{
+  width:60%;
+  height:370rpx;
+  margin:0 auto;
+}
+swiper-item{
+  width:80%;
+}
+.slider image{
+  width:100%;
+  height:100%;
+}
+.pname{
+  font-size:16px;
+  padding-left:15rpx;
+ 
+ 
+}
+.desc{
+  font-size:14px;
+  padding-left:15rpx;
+}
+.price{
+  text-decoration: line-through;
+  color:gray;
+  font-size:13px;
+  margin-top:5rpx;
+}
+.intr{
+  padding:15rpx;
+  font-family: '楷体';
+}
+.sold{
+  display: flex;
+  justify-content: space-between;
+ 
+}
+.vprice{
+  font-size: 16px;
+  color:#d4237a;
+  
+}
+.count{
+  font-size: 12px;
+  color:#ccc;
+}
+.divi{
+  height:15rpx;
+  background-color:#eee;
+}
+.reco{
+  padding:15rpx;
+}
+.detail{
+  padding:15rpx;
+}
+.title{
+  font-size: 16px;
+  font-weight: bold;
+}
+.detail-item{
+  font-size: 12px;
+  color:#aaa;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  border-bottom: 1px solid #ddd;
+}
+.add-cart image{
+  z-index: 10;
+  position:fixed;
+  bottom:0rpx;
+  left:0rpx;
+  width:60rpx;
+  height:60rpx;
+  padding:10rpx 20rpx;
+
+}
+.car{
+  z-index: 10;
+  position:fixed;
+  color:#fff;
+  text-align: center;
+  font-size: 16px;
+  line-height: 80rpx;
+  width:650rpx;
+  height:80rpx;
+  background: #d4237a;
+  bottom:0rpx;
+  right:0rpx;
+}
+/*订单**/
+.pay{
+   width:600rpx;
+   font-size: 25rpx;
+   text-align: center;
+   margin : 30rpx auto;
+   padding-left:10rpx;
+   padding-bottom: 50rpx; 
+   display: flex;
+   justify-content: space-between;  
+   flex-wrap: wrap;
+}
+.pay-item image{
+   width:70rpx;
+   height:70rpx;
+}
+/**会员专享价*/
+.ell{
+  overflow: hidden;/**超出范围*/
+  white-space: nowrap;/*不允许换行*/
+  text-overflow: ellipsis;/*超出部分添加。。。*/
+}
+.order-item{
+  color: #AC3800;
+}
+.order-product{
+  border: 2rpx solid #ddd;
+  border-radius: 20rpx;
+  margin: 10rpx 10rpx;
+}
+.order-product image{
+  width:250rpx;
+  height:250rpx;
+}
+.order-word{
+  width: 100px;
+  font-size: 30rpx;
+  margin: 0  auto;
+}
+.order-cart{
+  padding:10rpx 20rpx; 
+  display: flex;
+  justify-content: space-between;
+}
+.order-new{
+  font-size: 25rpx;
+  color:#FEAF45; 
+  margin-right:2rpx; 
+}
+.order-old{
+  font-size: 25rpx;
+  color:#D4217B; 
+}
+.order-cart image{
+  width:30rpx;
+  height:30rpx;
+}

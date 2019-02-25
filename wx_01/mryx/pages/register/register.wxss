@@ -1,0 +1,50 @@
+/* pages/register1/register1.wxss */
+.login{
+  margin: 80rpx;
+}
+.phone,.username,.addr,.password,.passwordconfirm{
+  padding: 20rpx;
+  border-bottom: 2rpx solid #ddd;
+}
+.vip{
+  padding: 20rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 40rpx;
+}
+.vip input{
+  width:60rpx;
+}
+button{
+  margin-top: 20rpx;
+  background-color: #23A3E7;
+  color:#fff;
+}
+
+Radio{
+Width: 30rpx;
+margin-left: 30rpx;
+}
+.item-right{
+  display: flex;
+  justify-content: flex-start;
+}
+Radio .wx-radio-input{
+Border-radius: 50%; 
+Width: 28rpx;
+Height: 28rpx;
+}
+ 
+/* 选中后的样式 （可根据设计稿需求自己修改） */
+Radio .wx-radio-input.wx-radio-input-checked::before{
+Border-radius: 50%;
+Width: 44rpx; 
+Height: 44rpx; 
+Line-height: 44rpx;
+Text-align: center;
+Font-size: 26rpx; /* 对勾大小 26rpx */
+Color:#fff; /* 对勾颜色 */
+Background: #2facff;
+Border-color: #2facff;
+}

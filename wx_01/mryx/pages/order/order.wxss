@@ -1,0 +1,98 @@
+/* pages/order/order.wxss */
+page{
+  background-color: #f1f1f1;
+}
+.user,.product,.orderinfo{
+  margin:15rpx;
+  border:1rpx solid #fff;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+.user{
+  display: flex;
+  flex-direction: row;
+  padding:15rpx;
+}
+.image{
+  width:60rpx;
+  height:60rpx;
+}
+.user_info{
+  display: flex;
+  flex-direction: column;
+  font-size:16px;
+}
+.name{
+  margin-right:180rpx;
+}
+.addr{
+  font-size:14px;
+}
+
+.product{
+  display: flex;
+  flex-direction: row;
+}
+.pimg{
+  width:200rpx;
+  height:200rpx;
+  padding:20rpx 20rpx;
+}
+.pinfo{
+  font-size:16px;
+  padding:20rpx;
+}
+.ell{
+  overflow: hidden;/**超出范围*/
+  white-space: nowrap;/*不允许换行*/
+  text-overflow: ellipsis;/*超出部分添加。。。*/
+}
+.title{
+  width:100%;
+  margin:0 auto;
+}
+.pdesc{
+  margin-top:100rpx;
+}
+.price{
+  margin-right:280rpx;
+}
+.orderinfo{
+  font-size:16px;
+  padding:0 20rpx;
+}
+.info,.express,.totalprice{
+  width:100%;
+  height:100rpx;
+  border-bottom:1px solid #eee;
+  line-height:80rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.color{
+  color:#e71a85;
+}
+.payorder{
+  position: fixed;
+  bottom:0;
+  width:100%;
+  height:80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  font-size:16px;
+  display: flex;
+  justify-content: space-between;
+}
+.pay{
+  margin-left:25rpx;
+}
+.money{
+  color: #e71a85;
+  padding-left:15rpx;
+}
+.paying{
+  background-color:#e71a85;
+  width:180rpx;
+  color:#fff;
+  text-align: center;
+}

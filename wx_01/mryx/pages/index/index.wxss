@@ -1,0 +1,51 @@
+/**index.wxss**/
+
+.slider,.slider swiper{
+  width:100%;
+  height:300rpx;
+  margin-left: 8rpx; 
+}
+.slider image{
+  width:95%;
+  height:90%;
+  border:2px solid #fff;
+  border-radius:4%;
+}
+.index-nav{
+  display:flex;
+  flex-wrap: wrap;
+}
+.nav-item{
+  width:25%;
+  height:150rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.nav-item image{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50%;
+  align-items: center;
+  margin:0 auto;
+}
+.nav-tit{
+  font-size: 14px;
+  text-align: center;
+}
+.index-pic{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 16rpx; 
+}
+.pic-item{
+  width:50%;
+  height:210rpx;
+  flex-direction: column;
+ 
+}
+.pic-item image{
+ width:350rpx;
+ height:200rpx;
+ border-radius: 10rpx;
+}

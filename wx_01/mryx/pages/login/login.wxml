@@ -1,0 +1,19 @@
+<!--pages/register/register.wxml-->
+<view class="login">
+    <view class="phone">
+      <input placeholder="账号" type="text" bindinput="usernameinput" maxlength='11'/>      
+    </view>
+
+    <view class="upwd">
+      <input placeholder="密码" type="password" bindinput="passwordinput"/>
+    </view>
+
+    <view class="signin">
+      <button type="submit" catchtap="signin">登录</button>
+    </view>
+    <view class="login-item">
+      <view>忘记密码</view>
+      <navigator url="/pages/register/register">新用户注册</navigator>
+    </view> 
+</view>
+

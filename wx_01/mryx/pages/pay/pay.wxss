@@ -1,0 +1,68 @@
+/* pages/pay/pay.wxss */
+.app-container>.non{
+  width:100%;
+  height:240px;
+  background: gray;
+}
+.pay .pay_t{
+  margin-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f1f1;
+}
+.pay .pay_t text:nth-child(1) {
+  color:gray;
+  margin-left: 10px;
+}
+.pay .pay_t text:nth-child(2) {
+  font-size: 16px;
+}
+.pay .pay_t text:nth-child(3) {
+  margin-right: 10px;
+  font-size: 14px;
+  color:#0aa1ed;
+  width:18px;
+  height:18px;
+  text-align: center;
+  border:1px solid #0aa1ed;
+  border-radius:50%;
+}
+.pay .price{
+  font-size: 30px;
+  text-align: center;
+  margin:20px;
+  font-weight: bold;
+}
+.pay .pay_t1{
+  margin: 10px 10px 0px 10px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 14px;
+}
+.pay .pay_t1>text:nth-child(1){
+  color:gray;
+}
+.pay .pay_t2{
+  margin: 10px 10px 0px 10px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 14px;
+}
+.pay .pay_t2>text:nth-child(1){
+  color:gray;
+}
+.pay .pay_t2>text:nth-child(2) text{
+  margin-left:5px;
+  color:gray;
+}
+.pay .btn button{
+  color:#fff;
+  font-size:16px;
+  background-color: #0aa1ed;
+  margin-top:120px;
+}

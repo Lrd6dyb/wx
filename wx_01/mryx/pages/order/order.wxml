@@ -1,0 +1,44 @@
+<!--pages/order/order.wxml-->
+<wxs module="numberUtil" src="../../utils/tofixed.wxs"></wxs>
+<view class="user">
+  <image wx:if='{{server}}' class="image" src='{{server}}/img/addr.png' lazy-load='true' mode='aspectFill'></image>
+  <view class="user_info">
+    <view class="user_desc">
+      <text class="name">收货人：{{userinfo.uname}}</text>
+      <text class="phone">{{userinfo.phone}}</text>
+    </view>
+    <view class="addr" wx:if='{{userinfo.addr}}'>收货地址：{{userinfo.addr}}</view>
+  </view>
+</view>
+<block wx:for='{{shop_selarr}}'   wx:key='index'>
+     <view class="product"  >
+      <image class="pimg" src='{{server}}{{item.img_url}}' lazy-load='true' mode='aspectFill'></image>
+      <view class="pinfo">
+        <view class="title ell">{{item.title}}</view>
+        <view class="pdesc">
+          <text class="price">￥{{numberUtil.numberFormat(item.price)}}</text>
+          <text class="num">x{{item.num}}</text>
+        </view>
+      </view>
+    </view>  
+    
+</block>
+
+<view class="orderinfo">
+  <view class="info">
+    <text>商品总价</text>
+    <text>￥{{numberUtil.numberFormat(total)}}</text>
+  </view>
+  <view class="express">
+    <text>配送费</text>
+    <text>￥10.00</text>
+  </view>
+  <view class="totalprice">
+    <text>合计</text>
+    <text class="color">￥{{numberUtil.numberFormat(total + 10)}}</text>
+  </view>
+</view>
+<view class="payorder">
+  <text class='pay'>付款<text class='money'>￥{{numberUtil.numberFormat(total + 10)}}</text></text>    
+  <text class="paying" catchtap="gotopayTap" data-sum='{{total + 10}}'>去支付</text>
+</view>

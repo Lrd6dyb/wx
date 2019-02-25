@@ -1,0 +1,79 @@
+<!--index.wxml-->
+<view>
+  <view class="car">
+    <view>
+     <image wx:if='{{server}}' src="{{server}}/img/avatar1.jpg" lazy-load='true' moda="aspectFill"></image>
+     <view wx:if='{{hasUserInfo}}' class='login' open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+       <navigator url='/pages/login/login'>登录</navigator>
+       <view>/</view>
+       <navigator url='/pages/register/register'>注册</navigator>
+     </view>
+     <block>
+       <view wx:if='{{!hasUserInfo}}' class='uname'>{{uname}}</view>
+     </block>
+    </view>
+  </view>
+  <view class='line'></view>
+  <view class='card'>
+    <view class="card-item">
+      <view class="pages">￥0</view>
+      <view class="word">余额</view>
+    </view>
+    <view class="card-line">|</view>
+    <view class="card-item">
+      <view class="pages">0</view>
+      <view class="word">红包</view>
+    </view>
+    <view class="card-line">|</view>
+    <view class="card-item">
+      <view class="pages">0</view>
+      <view class="word">商品劵</view>
+    </view>
+    <view class="card-line">|</view>
+    <view class="card-item">
+      <view class="pages">0</view>
+      <view class="word">积分兑换</view>
+    </view>
+  </view>
+  <view class="order">
+      <view class="orde">
+        <view>我的订单</view>
+        <view class="orde-item">全部订单></view>
+      </view>
+      <view class="pay">
+        <view class='pay-item'>
+          <image wx:if='{{server}}' src="{{server}}/img/pay1.png" lazy-load='true' moda="aspectFill"></image>
+          <view>待付款</view>
+        </view>
+        <view class='pay-item'>
+          <image wx:if='{{server}}' src="{{server}}/img/pay2.png" lazy-load='true' moda="aspectFill"></image>
+          <view>已发货</view>
+        </view>
+        <view class='pay-item'>
+          <image wx:if='{{server}}' src="{{server}}/img/pay3.png" lazy-load='true' moda="aspectFill"></image>
+          <view>派送中</view>
+        </view>
+        <view class='pay-item'>
+          <image wx:if='{{server}}' src="{{server}}/img/pay4.png" lazy-load='true' moda="aspectFill"></image>
+          <view>已完成</view>
+        </view>
+      </view>
+  </view>
+  <view class="order">
+    <view class="order-item">会员专享价</view>
+    <view class="pay">
+      <view class="order-product"  wx:for='{{list}}' wx:key='{{index}}'>
+        <image wx:if='{{server}}' src='{{server}}{{item.img_url}}' lazy-load='true' mode='aspectFill'></image>
+        <view class="order-word ell">{{item.title}}</view>
+        <view class='order-cart'>
+          <view>
+            <text class='order-new'>￥{{item.price*0.5}}</text>
+            <text class='order-old'>￥{{item.price}}</text>
+          </view>
+          <image wx:if="{{server}}" src='{{server}}/img/cart2.png'></image>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+</view>

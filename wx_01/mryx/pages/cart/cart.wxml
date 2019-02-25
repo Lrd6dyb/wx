@@ -1,0 +1,68 @@
+<!--pages/cart/cart.wxml-->
+<wxs module="numberUtil" src="../../utils/tofixed.wxs"></wxs>
+<view class='header' wx:if="{{!hintShow}}">
+  <view class='check_box' > 
+    <image wx:if='{{server}}' class='check_img' src='{{server}}/img/false.png' hidden='{{allsel}}' catchtap='allcheckTap'></image>       
+    <image wx:if='{{server}}' class='check_img' src='{{server}}/img/true.png' hidden='{{!allsel}}' catchtap='allcheckTap'></image>          
+    <text class='check_text' catchtap='allcheckTap'>全选</text>    
+  </view>    
+  <text class='header_text' catchtap='adminTap'>{{adminShow?'取消管理':'管理'}}</text>
+</view>
+         
+<view class='main'> 
+  <view class= "card1" wx:if="{{hintShow}}">
+      <view class='card1-item'>
+        <image wx:if='{{server}}' class='card1-img' src='{{server}}/img/cart1.png'></image>
+      </view>
+      <view class='card1-item'>
+        <view class='card1-msg1'>购物车竟然是空的</view>
+        <view class='card1-msg2'>再忙，也要记得买点什么犒赏自己~</view>
+      </view>
+  </view> 
+  <view class='shop' wx:for='{{shopcarData}}' wx:key='this' wx:if="{{!hintShow}}">    
+    <view class='shop_check_box' data-index='{{index}}'data-sp_id='{{item.sp_id}}' catchtap='checkTap'>        
+      <image wx:if='{{server}}' class='check_img' hidden='{{item.check}}' src='{{server}}/img/false.png'></image>        
+      <image wx:if='{{server}}' class='check_img' hidden='{{!item.check}}' src='{{server}}/img/true.png'></image>    
+    </view>    
+    <image wx:if='{{server}}' class='shop_img' src='{{server}}{{item.img_url}}' mode='aspectFill' catchtap='navshopdetailTap'></image>    
+    <view class='shop_detail' catchtap='navshopdetailTap'>        
+      <text class='shop_name'>{{item.title}}</text>        
+      <text class='shop_old_price'>￥{{numberUtil.numberFormat(item.price * 1.1)}}</text>        
+      <view class='shop_detail_bottom'>            
+        <text class='shop_new_price'>￥{{numberUtil.numberFormat(item.price)}}</text>            
+        <view class='num_change'>                
+          <image wx:if='{{server}}' class='minus_icon' hidden='{{item.num<2}}' src='{{server}}/img/mi1.png' data-index='{{index}}' data-types='minus' catchtap='numchangeTap'></image>
+          <image wx:if='{{server}}' class='minus_icon' hidden='{{item.num>=2}}' src='{{server}}/img/mi2.png'></image>                        
+          <text class='shop_num'>{{item.num}}</text>                
+          <image wx:if='{{server}}' class='add_icon' data-index='{{index}}' data-types='add' catchtap='numchangeTap' src='{{server}}/img/add.png'></image>            
+        </view>        
+      </view>    
+    </view>  
+  </view>
+    <!-- 商品推荐 -->
+    <view class='order'>
+      <view class="order-item">你可能还喜欢</view>
+      <view class="pay">
+        <view class="order-product"  wx:for='{{list}}' wx:key='{{index}}'>
+          <image wx:if='{{server}}' src="{{server}}{{item.img_url}}" lazy-load='true' mode='aspectFill'></image>
+          <view class="order-word ell">{{item.title}}</view>
+          <view class='order-cart'>
+            <view>
+              <text class='order-new'>￥{{item.price*0.5}}</text>
+              <text class='order-old'>￥{{item.price}}</text>
+            </view>
+            <view>
+              <image wx:if="{{server}}" src="{{server}}/img/cart2.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+</view>
+
+<view class='footer'>    
+  <text class='footer_total_text' hidden='{{adminShow}}'>合计：<text class='footer_total_price'>￥{{numberUtil.numberFormat(total)}}</text></text>    
+  <text class='footer_total' hidden='{{adminShow}}' catchtap='goclearingTap'>结算</text>    
+  <text class='deleteshop' catchtap='deleteshopTap' hidden='{{!adminShow}}'>移除商品</text>    
+  <text class='deleteshop' catchtap='addcollectTap' hidden='{{!adminShow}}'>加入收藏夹</text>
+</view>

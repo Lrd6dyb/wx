@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="app-container">
+  <view class='slider'>
+    <swiper autoplay='true' interval='2000' duration='500' circular='true' >
+      <block wx:for="{{list}}" wx:key='index'>
+        <swiper-item>
+          <image src="{{server}}{{item.img_url}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='index-nav'>
+    <view bindtap='handle1' class='nav-item' wx:for='{{navlist}}' wx:key='index' data-id="{{item.pro_type}}">
+      <image src='{{server}}{{item.img_url}}' lazy-load mode='aspectFill'></image>
+      <view class='nav-tit'>{{item.title}}</view>
+    </view>
+  </view>
+
+   <view class='index-pic'>
+    <view bindtap='handle1' class='pic-item' wx:for='{{piclist}}' wx:key='index' data-id="{{item.pro_type}}">
+      <image src='{{server}}{{item.img_url}}' lazy-load ></image>
+    </view>
+  </view>
+</view>
+

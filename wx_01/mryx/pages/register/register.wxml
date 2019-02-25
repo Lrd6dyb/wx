@@ -1,0 +1,40 @@
+<!--pages/register1/register1.wxml-->
+
+<view class="login">
+    <view class="doc-title zan-hairline--bottom"></view>
+
+    <view class="phone">
+      <input placeholder="手机号" type="text" maxlength='11' minlength="11" bindinput="phoneinput"/>      
+    </view>
+
+    <view class="username">
+      <input placeholder="用户名" type="text" bindinput="usernameinput"/>      
+    </view>
+
+    <view class="addr">
+      <input placeholder="地址" type="text" bindinput="addrinput"/>      
+    </view>
+
+    <view class="password">
+      <input placeholder="密码" type="password"bindinput="passwordinput"/>
+    </view>
+
+    <view class="passwordconfirm">
+      <input placeholder="密码确认" value=""type="password" bindinput="passwordconfirminput"/>
+    </view>
+
+    <view class="vip">
+         注册会员：
+         
+         <radio-group>
+          <radio id="vip" value="yes"/>是
+         <radio id="vip" value='no' checked/>否 
+         </radio-group>
+
+    </view>
+
+    <view class="signin">
+      <button type="submit" catchtap="signin" disabled='{{prohibit}}'>注册</button>
+    </view>
+  </view>
+

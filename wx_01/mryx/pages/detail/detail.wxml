@@ -1,0 +1,66 @@
+<!--logs.wxml-->
+<wxs module="numberUtil" src="../../utils/tofixed.wxs"></wxs>
+<view class='app-container'>
+  <view class='slider'>
+    <swiper autoplay='true' interval='2000' duration='500' circular='true' indicator-dots>
+      <block>
+        <swiper-item>
+          <image wx:if='{{server}}' src="{{server}}{{list.img_url}}" class="slide-image"/>
+        </swiper-item>
+        <swiper-item>
+          <image wx:if='{{server}}' src="{{server}}{{list.img_url}}" class="slide-image"/>
+        </swiper-item>
+        <swiper-item>
+          <image wx:if='{{server}}' src="{{server}}{{list.img_url}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='pname'>{{list.title}}</view>
+    <!-- <view class='desc'>珍珠级龙眼 吃出3D肉感</view> -->
+  </view>
+  <view class='intr'>
+  
+    <view class='price'>￥{{numberUtil.numberFormat(list.price*1.1)}}</view>
+    <view class='sold'>
+      <text class='vprice'>￥{{list.price}}</text>
+      <text class='count'>已售{{count}}份</text>
+    </view>
+  </view>
+  <view class='divi'></view>
+  <view class='reco'>
+    <view>推荐商品</view>
+    <view class="pay">
+      <view class="order-product"  wx:for='{{list1}}' wx:key='{{index}}'>
+        <image wx:if='{{server}}' wx:if='{{item.img_url}}' src='{{server}}{{item.img_url}}' lazy-load='true' mode='aspectFill'></image>
+        <view class="order-word ell">{{item.title}}</view>
+        <view class='order-cart'>
+          <view>
+            <text class='order-new'>￥{{item.price}}</text>
+            <text class='order-old'>￥{{item.price*0.5}}</text>
+          </view>
+          <image wx:if="{{server}}" src='{{server}}/img/cart2.png'></image>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+  <!-- <view class='detail'>
+    <view class='title'>商品详情</view>
+    <view class='detail-item'>重量：500g</view>
+    <view class='detail-item'>包装：盒装</view>
+    <view class='detail-item'>保质期：到货立即使用</view>
+    <view class='detail-item'>储存方法：冷藏</view>
+  </view> -->
+  <!-- <view>
+    <view>123</view>
+    <view>123</view>
+    <view>123</view>
+    <view>123</view>
+    <view>123</view> 
+  </view> -->
+
+  <view class='add-cart'  bindtap='handle1' catchtap='addCart'>
+    <image wx:if="{{server}}" src='{{server}}/img/cart2.png'></image>
+    <view class='car'>加入购物车</view>
+  </view>
+</view>
